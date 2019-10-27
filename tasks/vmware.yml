@@ -32,7 +32,7 @@
 - name: Mount VMware tools.
   mount:
     name: /tmp/vmfusion
-    src: /home/vagrant/linux.iso
+    src: /home/mobile/linux.iso
     fstype: iso9660
     opts: loop
     state: mounted
@@ -49,7 +49,7 @@
 - name: Unmount VMware tools.
   mount:
     name: /tmp/vmfusion
-    src: /home/vagrant/linux.iso
+    src: /home/mobile/linux.iso
     fstype: iso9660
     state: absent
 
@@ -63,5 +63,5 @@
 
 - name: Delete VMware Tools.
   file:
-    path: /home/vagrant/linux.iso
+    path: /home/mobile/linux.iso
     state: absent

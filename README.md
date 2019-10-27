@@ -1,4 +1,4 @@
-# Ansible Role: Packer RHEL/CentOS Configuration for Vagrant VirtualBox
+# Ansible Role: Packer RHEL/CentOS Configuration for mobile VirtualBox
 
 [![Build Status](https://travis-ci.org/geerlingguy/ansible-role-packer_rhel.svg?branch=master)](https://travis-ci.org/geerlingguy/ansible-role-packer_rhel)
 
@@ -8,12 +8,12 @@ The role may be made more flexible in the future, so it could work with other Li
 
 ## Requirements
 
-Prior to running this role via Packer, you need to make sure Ansible is installed via a shell provisioner, and that preliminary VM configuration (like adding a vagrant user to the appropriate group and the sudoers file) is complete, generally by using a Kickstart installation file (e.g. `ks.cfg`) with Packer. An example array of provisioners for your Packer .json template would be something like:
+Prior to running this role via Packer, you need to make sure Ansible is installed via a shell provisioner, and that preliminary VM configuration (like adding a mobile user to the appropriate group and the sudoers file) is complete, generally by using a Kickstart installation file (e.g. `ks.cfg`) with Packer. An example array of provisioners for your Packer .json template would be something like:
 
     "provisioners": [
       {
         "type": "shell",
-        "execute_command": "echo 'vagrant' | {{.Vars}} sudo -S -E bash '{{.Path}}'",
+        "execute_command": "echo 'mobile' | {{.Vars}} sudo -S -E bash '{{.Path}}'",
         "script": "scripts/ansible.sh"
       },
       {
